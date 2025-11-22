@@ -25,6 +25,11 @@ public class ArticleController {
     @Autowired
     ArticleService articleService;
 
+    @GetMapping("/welfarecheck")
+    public String getMethodName() {
+        return new String("ok");
+    }
+
     @PostMapping
     public ResponseEntity<Article> create(@RequestBody Article article) {
         Article created = articleService.create(article);
