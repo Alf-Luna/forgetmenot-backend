@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mooncow.forgetmenot.backend.model.Article;
 import com.mooncow.forgetmenot.backend.service.ArticleService;
+import com.mooncow.forgetmenot.backend.dto.ArticleDto;
 
 @RestController
 @RequestMapping("/article")
@@ -31,8 +32,8 @@ public class ArticleController {
     }
 
     @PostMapping
-    public ResponseEntity<Article> create(@RequestBody Article article) {
-        Article created = articleService.create(article);
+    public ResponseEntity<Article> create(@RequestBody ArticleDto dto) {
+        Article created = articleService.create(new Article(dto));
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 

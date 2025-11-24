@@ -1,5 +1,7 @@
 package com.mooncow.forgetmenot.backend.model;
 
+import com.mooncow.forgetmenot.backend.dto.ArticleDto;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -41,4 +43,15 @@ public class Article {
     private String email;
 
     // List<String> tags;
+
+    public Article(ArticleDto dto){
+        this.name = dto.getName();
+        this.imgUrl = dto.getImgUrl();
+        this.category = dto.getCategory();
+        this.price = dto.getPrice();
+        this.condition = dto.getCondition();
+        this.acquisitionDate = dto.getAcquisitionDate();
+        this.location = dto.getLocation();
+        this.email = dto.getEmail();
+    }
 }
