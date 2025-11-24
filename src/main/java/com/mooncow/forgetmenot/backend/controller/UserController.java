@@ -42,6 +42,13 @@ public class UserController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/{email}")
+    public ResponseEntity<User> getById(@PathVariable String email) {
+        return userService.getByEmail(email)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<User> update(
             @PathVariable Long id,
