@@ -30,7 +30,7 @@ public class ArticleService {
     public Article update(Long id, Article updated) {
         if (articleRepository.findById(updated.getId()).isPresent()){
             Article updatedArticle = Article.builder()
-                .id(updated.getId())
+                .id(id)
                 .name(updated.getName())
                 .imgUrl(updated.getImgUrl())
                 .category(updated.getCategory())
