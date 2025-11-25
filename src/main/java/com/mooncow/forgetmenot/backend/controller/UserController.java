@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mooncow.forgetmenot.backend.dto.UserDto;
@@ -43,8 +44,8 @@ public class UserController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/{email}")
-    public ResponseEntity<User> getById(@PathVariable String email) {
+    @GetMapping("/email")
+    public ResponseEntity<User> getById(@RequestParam String email) {
         return userService.getByEmail(email)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
