@@ -2,6 +2,7 @@ package com.mooncow.forgetmenot.backend.model;
 
 import com.mooncow.forgetmenot.backend.dto.UserDto;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,6 +31,7 @@ public class User {
 
     private String name;
 
+    @Column(unique = true)
     private String email;
 
     private String password;
