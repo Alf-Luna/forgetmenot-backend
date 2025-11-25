@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mooncow.forgetmenot.backend.dto.UserDto;
 import com.mooncow.forgetmenot.backend.model.User;
 import com.mooncow.forgetmenot.backend.service.UserService;
 
@@ -25,8 +26,8 @@ public class UserController {
     UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> create(@RequestBody User user) {
-        User created = userService.create(user);
+    public ResponseEntity<User> create(@RequestBody UserDto dto) {
+        User created = userService.create(new User(dto));
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
