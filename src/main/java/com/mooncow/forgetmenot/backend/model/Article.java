@@ -40,7 +40,7 @@ public class Article {
 
     private String location;
 
-    private String email;
+    private String idUsuario;
 
     // List<String> tags;
 
@@ -52,6 +52,6 @@ public class Article {
         this.condition = dto.getCondition();
         this.acquisitionDate = dto.getAcquisitionDate();
         this.location = dto.getLocation();
-        this.email = dto.getEmail();
+        this.idUsuario = dto.getIdUsuario();
     }
 }

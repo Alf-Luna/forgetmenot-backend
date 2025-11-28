@@ -18,5 +18,5 @@ public class ArticleDto { //solo pa recibir el que manda el backend
     private String condition;
     private String acquisitionDate;
     private String location;
-    private String email;
+    private String idUsuario;
 }

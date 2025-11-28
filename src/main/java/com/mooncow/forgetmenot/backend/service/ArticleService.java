@@ -38,7 +38,7 @@ public class ArticleService {
                 .condition(updated.getCondition())
                 .acquisitionDate(updated.getAcquisitionDate())
                 .location(updated.getLocation())
-                .email(updated.getEmail())
+                .idUsuario(updated.getIdUsuario())
                 .build();
             return articleRepository.save(updatedArticle);
         }
