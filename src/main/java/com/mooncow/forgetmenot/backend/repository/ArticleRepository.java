@@ -10,5 +10,5 @@ import com.mooncow.forgetmenot.backend.model.Article;
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Long>  {
     
-    public List<Article> findAllByEmail(String email);
+    public List<Article> findAllByIdUsuario(String email);
 }

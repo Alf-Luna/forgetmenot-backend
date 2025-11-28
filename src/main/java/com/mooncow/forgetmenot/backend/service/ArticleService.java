@@ -52,7 +52,7 @@ public class ArticleService {
         articleRepository.deleteById(id);
     }
 
-    public List<Article> getAllByEMail(String email) {
-        return articleRepository.findAllByEmail(email);
+    public List<Article> getAllByIdUsuario(String email) {
+        return articleRepository.findAllByIdUsuario(email);
     }
 }

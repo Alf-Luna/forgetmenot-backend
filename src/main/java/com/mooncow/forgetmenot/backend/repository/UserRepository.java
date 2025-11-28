@@ -10,5 +10,5 @@ import com.mooncow.forgetmenot.backend.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
-    public Optional<User> findByIdUsuario(String idUsuario);
+    public Optional<User> findByEmail(String email);
 }

@@ -74,6 +74,6 @@ public class ArticleController {
 
     @GetMapping("/all/mail")
     public ResponseEntity<List<Article>> getAllByEMail(@RequestParam String idUsuario) {
-        return ResponseEntity.ok(articleService.getAllByEMail(idUsuario));
+        return ResponseEntity.ok(articleService.getAllByIdUsuario(idUsuario));
     }
 }
